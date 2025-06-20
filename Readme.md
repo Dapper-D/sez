@@ -1,8 +1,147 @@
-# Stock Trading App (NSE/MCX/BSE Data Pipeline)
+# NSE Options Trading Analysis and Signal Generation
 
-A full end-to-end pipeline for ingesting, storing, processing, validating, and preparing Indian market data (NSE/MCX/BSE) for quant trading and analytics, **orchestrated by running `app.py`**.  
-**All components, including schema creation and historical data import, are mandatory and run automatically on startup.**  
-Designed for **Windows 10/11**.
+This project is a comprehensive data pipeline and analysis tool for NSE (National Stock Exchange) options data. It automates the process of fetching, storing, processing, and analyzing options data to generate trading signals. The application features a real-time data collector, a historical data downloader, a robust data processing pipeline, a machine learning model for signal generation, and an interactive web-based GUI for data exploration and analysis.
+
+## Features
+
+*   **Real-time Data Collection**: Ingests live tick data from an NSE data vendor via a WebSocket connection.
+*   **Historical Data Downloader**: Fetches historical options data for specified instruments and date ranges.
+*   **TimescaleDB Integration**: Utilizes TimescaleDB for efficient storage and querying of time-series data (candlesticks, technical indicators, etc.).
+*   **Automated Data Pipeline**: A fully automated pipeline that handles:
+    *   Database schema creation and management.
+    *   Data collection and storage.
+    *   Calculation of various technical indicators (OBV, RSI, TVI, PVI, PVT).
+    *   Data preparation for machine learning models.
+    *   Pipeline validation and monitoring.
+*   **Machine Learning Model**: Includes a machine learning model to generate buy/sell signals based on historical data.
+*   **Interactive GUI**: A Streamlit-based web application for:
+    *   Exploring options contracts.
+    *   Visualizing candlestick data and technical indicators.
+    *   Analyzing scalping and ML-based trading signals.
+    *   Performing forward testing and live inference.
+*   **Modular and Extensible**: The project is designed with a modular architecture, making it easy to extend and customize.
+
+## System Architecture
+
+The application is orchestrated by `app.py`, which initializes and runs all the components in the correct order.
+
+1.  **Database Schema Setup (`schema_design.py`)**:
+    *   Establishes a connection to the PostgreSQL/TimescaleDB database.
+    *   Creates the necessary tables (`instruments`, `candle_data_1min`, `candle_data_15sec`, `technical_indicators`, `trading_signals`).
+    *   Converts time-series tables into TimescaleDB hypertables.
+    *   Sets up data retention policies.
+
+2.  **Historical Data Download (`historical_downloader.py`)**:
+    *   Downloads historical options data based on the configuration in `Nifty_Input.csv`.
+    *   Stores the downloaded data in the database.
+
+3.  **Real-time Data Collection (`data_collector.py`)**:
+    *   Connects to the NSE data vendor's WebSocket.
+    *   Receives and processes real-time tick data.
+    *   Aggregates tick data into 15-second and 1-minute candlesticks and stores them in the database.
+
+4.  **Indicator Calculation (`indicator_calculator.py`)**:
+    *   Calculates various technical indicators from the candlestick data.
+    *   Stores the calculated indicators in the `technical_indicators` table.
+
+5.  **Data Preparation (`data_preparation.py`)**:
+    *   Prepares the data for use in machine learning models and the GUI.
+    *   Generates features, handles data scaling, and creates training/testing datasets.
+    *   Provides functions for forward testing and live inference.
+
+6.  **Pipeline Validation (`pipeline_validator.py`)**:
+    *   Validates the integrity of the data pipeline by checking database schema, data flow, and indicator calculations.
+
+7.  **Graphical User Interface (`app_gui.py`)**:
+    *   Provides an interactive web interface for users to explore data, visualize signals, and interact with the machine learning model.
+
+## File Structure
+
+```
+.
+├── app.py                     # Main application orchestrator
+├── app_gui.py                 # Streamlit GUI
+├── schema_design.py           # Database schema and setup
+├── data_collector.py          # Real-time data collection
+├── historical_downloader.py   # Historical data downloader
+├── indicator_calculator.py    # Technical indicator calculation
+├── data_preparation.py        # Data preparation for ML and analysis
+├── pipeline_validator.py      # Data pipeline validation
+├── test_forward_live.py       # Tests for forward and live testing
+├── requirements.txt           # Python dependencies
+├── .env                       # Environment variables (credentials, DB config)
+├── Nifty_Input.csv            # Input for historical data downloader
+├── historical_data/           # Directory for historical data CSVs
+├── ml_data/                   # Directory for ML datasets, models, and results
+├── ...
+```
+
+## Setup and Installation
+
+### Prerequisites
+
+*   Python 3.8+
+*   PostgreSQL with TimescaleDB extension
+*   Credentials for an NSE data vendor (for real-time and historical data)
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository_url>
+    cd <repository_directory>
+    ```
+
+2.  **Create and activate a virtual environment:**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
+
+3.  **Install the required Python packages:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Set up the database:**
+    *   Install PostgreSQL and the TimescaleDB extension.
+    *   Create a new database for the application.
+
+5.  **Configure the environment variables:**
+    *   Create a file named `.env` in the root of the project.
+    *   Add the following variables to the `.env` file, replacing the placeholder values with your actual credentials and database connection details:
+        ```
+        DB_NAME=your_db_name
+        DB_USER=your_db_user
+        DB_PASSWORD=your_db_password
+        DB_HOST=localhost
+        DB_PORT=5432
+
+        NSE_LOGIN_ID=your_nse_login_id
+        NSE_PRODUCT=your_nse_product
+        NSE_API_KEY=your_nse_api_key
+        NSE_AUTH_ENDPOINT=https://your_nse_auth_endpoint
+        NSE_TICKERS_ENDPOINT=https://your_nse_tickers_endpoint
+        NSE_WEBSOCKET_ENDPOINT=wss://your_nse_websocket_endpoint
+        ```
+
+## Usage
+
+1.  **Configure the historical data download:**
+    *   Edit the `Nifty_Input.csv` file to specify the instruments and date ranges for which you want to download historical data.
+
+2.  **Run the application:**
+    ```bash
+    python app.py
+    ```
+    This will start the entire data pipeline, including the historical data download, real-time data collection, and the Streamlit GUI.
+
+3.  **Access the GUI:**
+    *   Open your web browser and navigate to the URL provided in the console (usually `http://localhost:8501`).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any suggestions or find any bugs.
 
 ## 🚦 System Flow
 
