@@ -220,6 +220,10 @@ class DataPreparation:
                     'tvi', 'obv', 'rsi', 'pvi', 'pvt'
                 ]
                 df = pd.DataFrame(rows, columns=columns)
+                # Convert datetime columns to string for CSV export
+                for col in df.columns:
+                    if pd.api.types.is_datetime64_any_dtype(df[col]):
+                        df[col] = df[col].astype(str)
                 df.to_csv('scalping_signals/sample_scalping_data.csv', index=False)
                 logger.info(f"Saved sample scalping data with {len(df)} rows")
             else:
@@ -467,6 +471,10 @@ class DataPreparation:
                 logger.warning(f"All data dropped after feature engineering for instrument_id={instrument_id} ({symbol_used})")
                 return False
 
+            # Convert datetime columns to string for CSV export
+            for col in df.columns:
+                if pd.api.types.is_datetime64_any_dtype(df[col]):
+                    df[col] = df[col].astype(str)
             df.to_csv('ml_data/full_dataset.csv', index=False)
             features = [
                 'open', 'high', 'low', 'close', 'volume', 'open_interest',
@@ -481,47 +489,71 @@ class DataPreparation:
             X = X.dropna()
             X = X.clip(lower=-1e10, upper=1e10)
             y = y.loc[X.index]
+            X = X.reset_index(drop=True)
+            y = y.reset_index(drop=True)
 
+            # --- Chronological Split for Training and Forward Testing ---
+            # Use the first 80% of data for training, and the last 20% for forward testing.
+            # This simulates a real-world scenario where we train on past data and test on future data.
+            split_idx = int(0.8 * len(df))
+            train_df = df.iloc[:split_idx]
+            forward_df = df.iloc[split_idx:]
+
+            # Prepare training data
+            X_train = train_df[features]
+            y_train = train_df['target']
+            X_train = X_train.replace([np.inf, -np.inf], np.nan).dropna()
+            y_train = y_train.loc[X_train.index]
+            
             scaler = StandardScaler()
-            X_scaled = scaler.fit_transform(X)
+            X_train_scaled = scaler.fit_transform(X_train)
+
             with open('ml_data/scaler.pkl', 'wb') as f:
                 pickle.dump(scaler, f)
 
-            # --- Forward Test Split (chronological) ---
-            split_idx = int(0.8 * len(X_scaled))
-            X_train, X_forward = X_scaled[:split_idx], X_scaled[split_idx:]
-            y_train, y_forward = y.iloc[:split_idx], y.iloc[split_idx:]
-            df_forward = df.iloc[split_idx:]
-
-            np.save('ml_data/X_train.npy', X_train)
-            np.save('ml_data/X_test.npy', X_forward)
+            # Prepare forward test data
+            X_forward = forward_df[features]
+            y_forward = forward_df['target']
+            X_forward = X_forward.replace([np.inf, -np.inf], np.nan).dropna()
+            y_forward = y_forward.loc[X_forward.index]
+            X_forward_scaled = scaler.transform(X_forward)
+            
+            np.save('ml_data/X_train.npy', X_train_scaled)
             np.save('ml_data/y_train.npy', y_train)
+            np.save('ml_data/X_test.npy', X_forward_scaled)
             np.save('ml_data/y_test.npy', y_forward)
+
             with open('ml_data/feature_names.txt', 'w') as f:
                 f.write('\n'.join(features))
+
             # --- ML Model Training and Persistence ---
             try:
                 from sklearn.ensemble import RandomForestClassifier
                 clf = RandomForestClassifier(n_estimators=100, random_state=42)
-                clf.fit(X_train, y_train)
+                clf.fit(X_train_scaled, y_train)
                 with open('ml_data/model.pkl', 'wb') as f:
                     pickle.dump(clf, f)
                 logger.info('RandomForestClassifier model trained and saved to ml_data/model.pkl')
                 # --- Forward Test Evaluation ---
-                if len(X_forward) > 0:
-                    y_pred = clf.predict(X_forward)
+                if len(X_forward_scaled) > 0:
+                    y_pred = clf.predict(X_forward_scaled)
                     from sklearn.metrics import accuracy_score
                     forward_acc = accuracy_score(y_forward, y_pred)
                     logger.info(f'Forward test accuracy: {forward_acc:.2%}')
                     # Save forward test results
-                    results_df = df_forward.copy()
+                    results_df = forward_df.loc[X_forward.index].copy()
                     results_df['predicted'] = y_pred
                     results_df['actual'] = y_forward.values
+                    # Convert datetime columns to string for CSV export
+                    for col in results_df.columns:
+                        if pd.api.types.is_datetime64_any_dtype(results_df[col]):
+                            results_df[col] = results_df[col].astype(str)
                     results_df.to_csv('ml_data/forward_test_results.csv', index=False)
                 else:
                     logger.warning('No data available for forward test split.')
             except Exception as e:
                 logger.error(f'Error training or saving RandomForestClassifier: {str(e)}')
+
             logger.info(f"ML training data prepared successfully with {len(df)} samples for symbol {symbol_used}")
 
             plt.figure(figsize=(12, 8))
@@ -673,6 +705,10 @@ class DataPreparation:
                     market_data.append(dict(zip(columns, row)))
                 df = pd.DataFrame(market_data)
                 df = df.replace([np.inf, -np.inf], np.nan).dropna()
+                # Convert datetime columns to string for CSV export
+                for col in df.columns:
+                    if pd.api.types.is_datetime64_any_dtype(df[col]):
+                        df[col] = df[col].astype(str)
                 df.to_csv('llm_data/market_data.csv', index=False)
                 df.to_json('llm_data/market_data.json', orient='records', date_format='iso')
                 logger.info(f"LLM data prepared successfully with {len(df)} records")
@@ -868,7 +904,10 @@ class DataPreparation:
             results_df['prediction_confidence'] = np.max(y_pred_proba, axis=1)
             results_df['predicted_probability_buy'] = y_pred_proba[:, 1]
             results_df['predicted_probability_sell'] = y_pred_proba[:, 0]
-            
+            # Convert datetime columns to string for CSV export
+            for col in results_df.columns:
+                if pd.api.types.is_datetime64_any_dtype(results_df[col]):
+                    results_df[col] = results_df[col].astype(str)
             results_df.to_csv('ml_data/forward_test_results.csv', index=False)
 
             # Save metrics
@@ -1010,9 +1049,14 @@ class DataPreparation:
             prediction = model.predict(X_scaled)[0]
             prediction_proba = model.predict_proba(X_scaled)[0]
 
+            # Convert timestamp to str if it's a pandas Timestamp
+            ts_value = latest_row['"time"'].iloc[0]
+            if isinstance(ts_value, pd.Timestamp):
+                ts_value = str(ts_value)
+
             # Create result
             result = {
-                'timestamp': latest_row['"time"'].iloc[0],
+                'timestamp': ts_value,
                 'symbol': symbol_used,
                 'current_price': latest_row['close'].iloc[0],
                 'prediction': 'BUY' if prediction == 1 else 'SELL',
