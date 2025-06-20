@@ -25,35 +25,39 @@ This project is a comprehensive data pipeline and analysis tool for NSE (Nationa
 
 The application is orchestrated by `app.py`, which initializes and runs all the components in the correct order.
 
-1.  **Database Schema Setup (`schema_design.py`)**:
-    *   Establishes a connection to the PostgreSQL/TimescaleDB database.
-    *   Creates the necessary tables (`instruments`, `candle_data_1min`, `candle_data_15sec`, `technical_indicators`, `trading_signals`).
-    *   Converts time-series tables into TimescaleDB hypertables.
-    *   Sets up data retention policies.
+### Step-by-Step Workflow
 
-2.  **Historical Data Download (`historical_downloader.py`)**:
-    *   Downloads historical options data based on the configuration in `Nifty_Input.csv`.
-    *   Stores the downloaded data in the database.
+1. **Database Schema Setup (`schema_design.py`)**
+   - Connects to PostgreSQL/TimescaleDB.
+   - Creates tables for instruments, candlesticks (1min, 15sec), technical indicators, and trading signals.
+   - Converts tables to hypertables and sets retention policies.
 
-3.  **Real-time Data Collection (`data_collector.py`)**:
-    *   Connects to the NSE data vendor's WebSocket.
-    *   Receives and processes real-time tick data.
-    *   Aggregates tick data into 15-second and 1-minute candlesticks and stores them in the database.
+2. **Historical Data Download (`historical_downloader.py`)**
+   - Reads `Nifty_Input.csv` for instrument/date config.
+   - Downloads historical options data and saves as CSVs in `historical_data/`.
+   - Imports CSVs into the database.
 
-4.  **Indicator Calculation (`indicator_calculator.py`)**:
-    *   Calculates various technical indicators from the candlestick data.
-    *   Stores the calculated indicators in the `technical_indicators` table.
+3. **Real-time Data Collection (`data_collector.py`)**
+   - Authenticates with NSE data vendor, downloads tickers, connects to WebSocket.
+   - Subscribes to up to 70 tickers (NSE/BSE).
+   - Aggregates tick data into 1min/15sec candles, stores in DB.
 
-5.  **Data Preparation (`data_preparation.py`)**:
-    *   Prepares the data for use in machine learning models and the GUI.
-    *   Generates features, handles data scaling, and creates training/testing datasets.
-    *   Provides functions for forward testing and live inference.
+4. **Indicator Calculation (`indicator_calculator.py`)**
+   - Loads 1min candles for each instrument.
+   - Calculates indicators (OBV, RSI, TVI, PVI, PVT).
+   - Stores results in `technical_indicators` table.
 
-6.  **Pipeline Validation (`pipeline_validator.py`)**:
-    *   Validates the integrity of the data pipeline by checking database schema, data flow, and indicator calculations.
+5. **Data Preparation (`data_preparation.py`)**
+   - Prepares data for ML/LLM, including feature engineering and scaling.
+   - Generates training/testing datasets, supports forward/live testing.
+   - Trains RandomForestClassifier, saves model and results.
 
-7.  **Graphical User Interface (`app_gui.py`)**:
-    *   Provides an interactive web interface for users to explore data, visualize signals, and interact with the machine learning model.
+6. **Pipeline Validation (`pipeline_validator.py`)**
+   - Validates schema, data flow, indicator completeness, and retention policies.
+   - Generates validation reports.
+
+7. **GUI (`app_gui.py`)**
+   - Streamlit app for data exploration, charting, signal analysis, and forward/live test visualization.
 
 ## File Structure
 
@@ -195,6 +199,7 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 - **Performance:** Optimized database connections and data processing
 - **UI Improvements:** Added better data visualization and error messages
 - **Code Structure:** Improved code organization and maintainability
+- **Datetime Export Robustness:** All data exports to CSV (including live predictions, forward test results, scalping data, and LLM data) now automatically convert pandas Timestamp columns to string. This prevents errors when loading these files in Streamlit or other tools that do not accept pandas Timestamp objects.
 
 ## Current Status
 - Real-time data collection is operational for both NSE and BSE stocks
@@ -244,49 +249,31 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 ```powershell
 git clone <your-repo-url>
 cd <repo-folder>
-
 python -m venv venv
 .\venv\Scripts\activate
-
-pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 2. Database Setup
-- Install PostgreSQL and TimescaleDB
-- Create database and enable TimescaleDB extension:
-```sql
-CREATE DATABASE nse_db;
-\c nse_db
-CREATE EXTENSION IF NOT EXISTS timescaledb;
-```
+### 2. Database
+- **Install PostgreSQL** and (optionally) the TimescaleDB extension.
+- Create a new database.
+- Update your `.env` file with the database credentials (see `.env.example`).
 
-### 2a. Special Dependency Installation (TA-Lib)
-The `TA-Lib` library requires a C library to be installed on your system first. For Windows:
-1. Download the TA-Lib library binaries from a trusted source. A common one is the [Unofficial Windows Binaries for Python Extension Packages](https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib).
-2. Choose the file that matches your Python version and system architecture (e.g., `cp311` for Python 3.11, `win_amd64` for 64-bit Windows).
-3. Open a command prompt, navigate to where you downloaded the file, and install it directly using pip:
-   ```powershell
-   # Replace the filename with the one you downloaded
-   pip install TA_Lib‑0.4.28‑cp311‑cp311‑win_amd64.whl
-   ```
-After this step, the `pip install -r requirements.txt` command will be able to successfully install the Python wrapper for TA-Lib.
+### 3. API Credentials
+- Add your data vendor API keys and endpoints to the `.env` file.
 
-### 3. Configuration
-Copy `.env.example` to `.env` and configure:
-```env
-NSE_LOGIN_ID=your_login_id
-NSE_PRODUCT=DIRECTRTLITE
-NSE_API_KEY=your_api_key
-NSE_AUTH_ENDPOINT=http://116.202.165.216/api/gettoken
-NSE_TICKERS_ENDPOINT=http://116.202.165.216/api/gettickers
-NSE_WEBSOCKET_ENDPOINT=ws://116.202.165.216:992/directrt/
-DB_NAME=nse_db
-DB_USER=postgres
-DB_PASSWORD=your_password
-DB_HOST=localhost
-DB_PORT=5432
-```
+## Troubleshooting
+
+### WebSocket Connection Error: `AttributeError: module 'websocket' has no attribute 'WebSocketApp'`
+
+- **Symptom**: The `data_collector.py` script fails with an `AttributeError`, preventing real-time data collection. This is visible in the `data_collector.log`.
+- **Cause**: This error is caused by a dependency conflict. The `socketclusterclient` library used in this project requires an outdated version of the `websocket-client` library (`<=0.48.0`). If a newer version of `websocket-client` or the conflicting `websocket` library is installed, it will cause this `AttributeError`.
+- **Fix**: The environment must be configured with the specific required versions. The `requirements.txt` file has been updated to lock these dependencies. To fix a broken environment, run the following:
+  ```powershell
+  pip uninstall websocket websocket-client -y
+  pip install -r requirements.txt
+  ```
+This ensures the correct, compatible versions (`socketclusterclient==1.3.6` and `websocket-client==0.48.0`) are installed.
 
 ## ▶️ Starting the Pipeline
 Always run:
@@ -299,12 +286,14 @@ This will:
 - Import historical data
 - Start all components in the correct order
 
-## Known Issues
-1. **TA-Lib Installation:** Requires manual installation of the underlying C-library before installing Python dependencies. See Setup instructions.
-2. Forward test accuracy needs improvement (currently at 47.06%)
-3. Some UI components may need optimization for large datasets
-4. Real-time data collection may need additional error handling for network issues
-5. (Fixed) Forward test results KeyError due to column name mismatch
+## Known Issues and Limitations
+
+- **WebSocket Connection Error:** If you see `module 'websocket' has no attribute 'WebSocketApp'`, ensure the `websocket-client` package is installed and imported correctly in `data_collector.py`.
+- **TimescaleDB Retention Policy:** If you see errors about `_timescaledb_config.bgw_policy_drop_chunks` not existing, your TimescaleDB extension or background jobs may not be set up correctly. Re-run the TimescaleDB extension setup and check your database configuration.
+- **Data Gaps:** Many "No data" messages for certain instruments/strikes may occur due to market inactivity or data vendor limitations. This is normal, but you may want to improve error handling or filter out instruments with no data.
+- **Empty Logs:** If `indicator_calculator.log` or `pipeline_validator.log` are empty, check that logging is enabled and these scripts are being executed as part of the pipeline.
+- **Small Forward Test Sample Size:** Forward test accuracy may be reported on small samples. For more robust evaluation, increase the sample size or adjust your data selection.
+- **Documentation:** For troubleshooting common errors (websocket, TimescaleDB, data gaps), see the Troubleshooting section below.
 
 ## Recent Bug Fixes
 1. **PyArrow Serialization Error**
@@ -400,4 +389,15 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-For any issues, please check the error messages in the Streamlit UI or refer to this README for troubleshooting steps. 
+For any issues, please check the error messages in the Streamlit UI or refer to this README for troubleshooting steps.
+
+## Troubleshooting
+
+### Pandas Timestamp Export Errors
+If you previously encountered errors such as:
+
+```
+Error running live inference: '2021-09-09 08:29:00-07:00' is of type <class 'pandas._libs.tslibs.timestamps.Timestamp'>, which is not an accepted type. value only accepts: int, float, str, or None. Please convert the value to an accepted type.
+```
+
+**This issue is now resolved.** All datetime columns in exported CSVs are automatically converted to string, ensuring compatibility with Streamlit and other consumers. 
