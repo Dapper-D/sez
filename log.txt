@@ -1,0 +1,472 @@
+PS C:\Users\300353635\Desktop\stock-trading-app> python app.py
+2025-06-19 19:13:52,161 - NSEDataCollector - INFO - Database connection pool created
+2025-06-19 19:13:52,237 - IndicatorCalculator - INFO - Database connection pool created
+2025-06-19 19:13:53,066 - PipelineValidator - INFO - Database connection pool created
+2025-06-19 19:14:01,203 - DataPreparation - INFO - Database connection pool created
+2025-06-19 19:14:01,277 - root - INFO - Processing 2 rows from Nifty_Input.csv
+2025-06-19 19:14:03,205 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116550CE.csv (40 rows)
+2025-06-19 19:14:04,579 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116550PE.csv (901 rows)2025-06-19 19:14:05,789 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116600CE.csv (245 rows)2025-06-19 19:14:07,319 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116600PE.csv (1119 rows)
+2025-06-19 19:14:08,380 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116650CE.csv (85 rows)
+2025-06-19 19:14:09,745 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116650PE.csv (1025 rows)
+2025-06-19 19:14:10,985 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116700CE.csv (389 rows)2025-06-19 19:14:12,527 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116700PE.csv (1126 rows)
+2025-06-19 19:14:13,557 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116750CE.csv (167 rows)2025-06-19 19:14:14,922 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116750PE.csv (1091 rows)
+2025-06-19 19:14:16,287 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116800CE.csv (605 rows)2025-06-19 19:14:17,650 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116800PE.csv (1126 rows)
+2025-06-19 19:14:18,860 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116850CE.csv (259 rows)2025-06-19 19:14:20,216 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116850PE.csv (1105 rows)
+2025-06-19 19:14:21,560 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY09SEP202116900CE.csv (792 rows)2025-06-19 19:14:22,508 - root - INFO - No data for NIFTY 09SEP2021 16900 PE
+2025-06-19 19:14:23,453 - root - INFO - No data for NIFTY 09SEP2021 16950 CE
+2025-06-19 19:14:24,400 - root - INFO - No data for NIFTY 09SEP2021 16950 PE
+2025-06-19 19:14:25,353 - root - INFO - No data for NIFTY 09SEP2021 17000 CE
+2025-06-19 19:14:26,297 - root - INFO - No data for NIFTY 09SEP2021 17000 PE
+2025-06-19 19:14:27,237 - root - INFO - No data for NIFTY 09SEP2021 17050 CE
+2025-06-19 19:14:28,185 - root - INFO - No data for NIFTY 09SEP2021 17050 PE
+2025-06-19 19:14:29,122 - root - INFO - No data for NIFTY 09SEP2021 17100 CE
+2025-06-19 19:14:30,048 - root - INFO - No data for NIFTY 09SEP2021 17100 PE
+2025-06-19 19:14:30,979 - root - INFO - No data for NIFTY 09SEP2021 17150 CE
+2025-06-19 19:14:31,926 - root - INFO - No data for NIFTY 09SEP2021 17150 PE
+2025-06-19 19:14:32,846 - root - INFO - No data for NIFTY 09SEP2021 17200 CE
+2025-06-19 19:14:33,800 - root - INFO - No data for NIFTY 09SEP2021 17200 PE
+2025-06-19 19:14:34,750 - root - INFO - No data for NIFTY 09SEP2021 17250 CE
+2025-06-19 19:14:35,699 - root - INFO - No data for NIFTY 09SEP2021 17250 PE
+2025-06-19 19:14:36,636 - root - INFO - No data for NIFTY 09SEP2021 17300 CE
+2025-06-19 19:14:37,579 - root - INFO - No data for NIFTY 09SEP2021 17300 PE
+2025-06-19 19:14:38,528 - root - INFO - No data for NIFTY 09SEP2021 17350 CE
+2025-06-19 19:14:39,465 - root - INFO - No data for NIFTY 09SEP2021 17350 PE
+2025-06-19 19:14:40,408 - root - INFO - No data for NIFTY 09SEP2021 17400 CE
+2025-06-19 19:14:41,341 - root - INFO - No data for NIFTY 09SEP2021 17400 PE
+2025-06-19 19:14:42,281 - root - INFO - No data for NIFTY 09SEP2021 17450 CE
+2025-06-19 19:14:43,216 - root - INFO - No data for NIFTY 09SEP2021 17450 PE
+2025-06-19 19:14:44,167 - root - INFO - No data for NIFTY 09SEP2021 17500 CE
+2025-06-19 19:14:45,119 - root - INFO - No data for NIFTY 09SEP2021 17500 PE
+2025-06-19 19:14:46,065 - root - INFO - No data for NIFTY 09SEP2021 17550 CE
+2025-06-19 19:14:47,018 - root - INFO - No data for NIFTY 09SEP2021 17550 PE
+2025-06-19 19:14:47,963 - root - INFO - No data for NIFTY 09SEP2021 17600 CE
+2025-06-19 19:14:48,899 - root - INFO - No data for NIFTY 09SEP2021 17600 PE
+2025-06-19 19:14:49,848 - root - INFO - No data for NIFTY 09SEP2021 17650 CE
+2025-06-19 19:14:50,778 - root - INFO - No data for NIFTY 09SEP2021 17650 PE
+2025-06-19 19:14:51,720 - root - INFO - No data for NIFTY 09SEP2021 17700 CE
+2025-06-19 19:14:52,655 - root - INFO - No data for NIFTY 09SEP2021 17700 PE
+2025-06-19 19:14:53,608 - root - INFO - No data for NIFTY 09SEP2021 17750 CE
+2025-06-19 19:14:54,556 - root - INFO - No data for NIFTY 09SEP2021 17750 PE
+2025-06-19 19:14:55,480 - root - INFO - No data for NIFTY 09SEP2021 17800 CE
+2025-06-19 19:14:56,435 - root - INFO - No data for NIFTY 09SEP2021 17800 PE
+2025-06-19 19:14:57,362 - root - INFO - No data for NIFTY 09SEP2021 17850 CE
+2025-06-19 19:14:58,307 - root - INFO - No data for NIFTY 09SEP2021 17850 PE
+2025-06-19 19:14:59,227 - root - INFO - No data for NIFTY 09SEP2021 17900 CE
+2025-06-19 19:15:00,167 - root - INFO - No data for NIFTY 09SEP2021 17900 PE
+2025-06-19 19:15:01,094 - root - INFO - No data for NIFTY 16SEP2021 16750 CE
+2025-06-19 19:15:02,045 - root - INFO - No data for NIFTY 16SEP2021 16750 PE
+2025-06-19 19:15:02,993 - root - INFO - No data for NIFTY 16SEP2021 16800 CE
+2025-06-19 19:15:04,672 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202116800PE.csv (2621 rows)
+2025-06-19 19:15:05,735 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202116850CE.csv (119 rows)2025-06-19 19:15:07,440 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202116850PE.csv (2451 rows)
+2025-06-19 19:15:08,827 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202116900CE.csv (912 rows)2025-06-19 19:15:10,354 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202116900PE.csv (2623 rows)
+2025-06-19 19:15:11,555 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202116950CE.csv (330 rows)2025-06-19 19:15:13,216 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202116950PE.csv (2554 rows)
+2025-06-19 19:15:14,924 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202117000CE.csv (2293 rows)
+2025-06-19 19:15:16,601 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202117000PE.csv (2626 rows)
+2025-06-19 19:15:17,961 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202117050CE.csv (693 rows)2025-06-19 19:15:19,667 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202117050PE.csv (2587 rows)
+2025-06-19 19:15:21,365 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202117100CE.csv (2389 rows)
+2025-06-19 19:15:22,867 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202117100PE.csv (2628 rows)
+2025-06-19 19:15:24,363 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202117150CE.csv (1769 rows)
+2025-06-19 19:15:26,089 - root - INFO - Saved historical_data\batch_20250620_021401\NIFTY16SEP202117150PE.csv (2608 rows)
+2025-06-19 19:15:27,024 - root - INFO - No data for NIFTY 16SEP2021 17200 CE
+2025-06-19 19:15:27,951 - root - INFO - No data for NIFTY 16SEP2021 17200 PE
+2025-06-19 19:15:28,902 - root - INFO - No data for NIFTY 16SEP2021 17250 CE
+2025-06-19 19:15:29,852 - root - INFO - No data for NIFTY 16SEP2021 17250 PE
+2025-06-19 19:15:30,789 - root - INFO - No data for NIFTY 16SEP2021 17300 CE
+2025-06-19 19:15:31,761 - root - INFO - No data for NIFTY 16SEP2021 17300 PE
+2025-06-19 19:15:32,696 - root - INFO - No data for NIFTY 16SEP2021 17350 CE
+2025-06-19 19:15:33,655 - root - INFO - No data for NIFTY 16SEP2021 17350 PE
+2025-06-19 19:15:34,607 - root - INFO - No data for NIFTY 16SEP2021 17400 CE
+2025-06-19 19:15:35,538 - root - INFO - No data for NIFTY 16SEP2021 17400 PE
+2025-06-19 19:15:36,472 - root - INFO - No data for NIFTY 16SEP2021 17450 CE
+2025-06-19 19:15:37,397 - root - INFO - No data for NIFTY 16SEP2021 17450 PE
+2025-06-19 19:15:38,317 - root - INFO - No data for NIFTY 16SEP2021 17500 CE
+2025-06-19 19:15:39,261 - root - INFO - No data for NIFTY 16SEP2021 17500 PE
+2025-06-19 19:15:40,188 - root - INFO - No data for NIFTY 16SEP2021 17550 CE
+2025-06-19 19:15:41,131 - root - INFO - No data for NIFTY 16SEP2021 17550 PE
+2025-06-19 19:15:42,080 - root - INFO - No data for NIFTY 16SEP2021 17600 CE
+2025-06-19 19:15:43,023 - root - INFO - No data for NIFTY 16SEP2021 17600 PE
+2025-06-19 19:15:43,970 - root - INFO - No data for NIFTY 16SEP2021 17650 CE
+2025-06-19 19:15:44,908 - root - INFO - No data for NIFTY 16SEP2021 17650 PE
+2025-06-19 19:15:45,856 - root - INFO - No data for NIFTY 16SEP2021 17700 CE
+2025-06-19 19:15:46,797 - root - INFO - No data for NIFTY 16SEP2021 17700 PE
+2025-06-19 19:15:47,733 - root - INFO - No data for NIFTY 16SEP2021 17750 CE
+2025-06-19 19:15:48,678 - root - INFO - No data for NIFTY 16SEP2021 17750 PE
+2025-06-19 19:15:49,629 - root - INFO - No data for NIFTY 16SEP2021 17800 CE
+2025-06-19 19:15:50,584 - root - INFO - No data for NIFTY 16SEP2021 17800 PE
+2025-06-19 19:15:51,534 - root - INFO - No data for NIFTY 16SEP2021 17850 CE
+2025-06-19 19:15:52,479 - root - INFO - No data for NIFTY 16SEP2021 17850 PE
+2025-06-19 19:15:53,429 - root - INFO - No data for NIFTY 16SEP2021 17900 CE
+2025-06-19 19:15:54,377 - root - INFO - No data for NIFTY 16SEP2021 17900 PE
+2025-06-19 19:15:55,323 - root - INFO - No data for NIFTY 16SEP2021 17950 CE
+2025-06-19 19:15:56,254 - root - INFO - No data for NIFTY 16SEP2021 17950 PE
+2025-06-19 19:15:57,193 - root - INFO - No data for NIFTY 16SEP2021 18000 CE
+2025-06-19 19:15:58,131 - root - INFO - No data for NIFTY 16SEP2021 18000 PE
+2025-06-19 19:15:58,131 - root - INFO - Download complete. 30 CSV files generated in historical_data\batch_20250620_021401
+2025-06-19 19:15:58,808 - root - INFO - Combined file written to: historical_data\batch_20250620_021401\combined_master.csv
+2025-06-19 19:15:58,809 - root - INFO - Starting DB import...
+2025-06-19 19:16:13,278 - root - INFO - Imported 30 CSVs, 0 failed.
+2025-06-19 19:16:13,278 - root - INFO - ALL DONE. 30 files imported, 0 failed. Master CSV: historical_data\batch_20250620_021401\combined_master.csv
+2025-06-19 19:16:13,279 - DataPreparation - INFO - Connected to database successfully
+2025-06-19 19:16:13,289 - DataPreparation - INFO - Flexible scalping signal generator (generate_scalping_signals_flexible) created successfully
+2025-06-19 19:16:13,289 - NSEDataCollector - INFO - Connected to database successfully
+2025-06-19 19:16:13,290 - IndicatorCalculator - INFO - Connected to database successfully
+Waiting for indicator calculator to initialize...
+2025-06-19 19:16:13,298 - NSEDataCollector - INFO - Loaded 34 instruments from database
+2025-06-19 19:16:13,319 - IndicatorCalculator - INFO - Loaded 40 1-minute candles for instrument 1
+2025-06-19 19:16:13,325 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 2
+2025-06-19 19:16:13,329 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 3
+2025-06-19 19:16:13,335 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 4
+2025-06-19 19:16:13,340 - IndicatorCalculator - INFO - Loaded 85 1-minute candles for instrument 5
+2025-06-19 19:16:13,344 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 6
+2025-06-19 19:16:13,347 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 7
+2025-06-19 19:16:13,353 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 8
+2025-06-19 19:16:13,358 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 9
+2025-06-19 19:16:13,364 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 10
+2025-06-19 19:16:13,370 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 11
+2025-06-19 19:16:13,377 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 12
+2025-06-19 19:16:13,382 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 13
+2025-06-19 19:16:13,390 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 14
+2025-06-19 19:16:13,393 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 15
+2025-06-19 19:16:13,402 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 16
+2025-06-19 19:16:13,407 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 17
+2025-06-19 19:16:13,410 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 18
+2025-06-19 19:16:13,414 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 19
+2025-06-19 19:16:13,417 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 20
+2025-06-19 19:16:13,423 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 21
+2025-06-19 19:16:13,426 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 22
+2025-06-19 19:16:13,430 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 23
+2025-06-19 19:16:13,433 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 24
+2025-06-19 19:16:13,437 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 25
+2025-06-19 19:16:13,440 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 26
+2025-06-19 19:16:13,444 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 27
+2025-06-19 19:16:13,448 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 28
+2025-06-19 19:16:13,452 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 29
+2025-06-19 19:16:13,456 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 30
+2025-06-19 19:16:13,459 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 31
+2025-06-19 19:16:13,462 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 32
+2025-06-19 19:16:13,467 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 33
+2025-06-19 19:16:13,472 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 34
+2025-06-19 19:16:13,472 - IndicatorCalculator - INFO - Historical data loaded successfully
+2025-06-19 19:16:13,473 - IndicatorCalculator - INFO - Indicator Calculator started successfully
+2025-06-19 19:16:13,473 - IndicatorCalculator - INFO - Starting periodic indicator recalculation
+2025-06-19 19:16:13,753 - NSEDataCollector - INFO - Full /gettoken response: {"Status":true,"AccessToken":"3e157ded8d904f16a91b6b24d0e60f7c","MaxSymbol":70,"Message":"\n<csvheader>Ticker,UniqueName,Symbol,Expiry,StrikePrice,OptionType,LTD,LTT,Open,High,Low,LTP,Vol,PrevVol,OI,PrevOI,TTQ,TTV,DayOpen,DayHighest,DayLowest,BBQ,BBP,BSQ,BSP,PrevClose,IV</csvheader>\n<ocnheader>CE_DayOpen,CE_DayHighest,CE_DayLowest,CE_PrevClose,CE_LTP,CE_LTD,CE_LTT,CE_TTQ,CE_TTV,CE_OI,CE_PrevOI,CE_Vol,CE_PrevVol,CE_BBP,CE_BBQ,CE_BSP,CE_BSQ,CE_ATP,CE_IV,CE_BSMPrice,CE_Delta,CE_Theta,CE_Gamma,CE_Rho,CE_PCRValue,CE_PCRVol,CE_PCROI,CE_Intrinsic,CE_Extrinsic,CE_Probability,CE_Moneyness,Symbol,Expiry,Strike,PE_DayOpen,PE_DayHighest,PE_DayLowest,PE_PrevClose,PE_LTP,PE_LTD,PE_LTT,PE_TTQ,PE_TTV,PE_OI,PE_PrevOI,PE_Vol,PE_PrevVol,PE_BBP,PE_BBQ,PE_BSP,PE_BSQ,PE_ATP,PE_IV,PE_BSMPrice,PE_Delta,PE_Theta,PE_Gamma,PE_Rho,PE_PCRValue,PE_PCRVol,PE_PCROI,PE_Intrinsic,PE_Extrinsic,PE_Probability,PE_Moneyness</ocnheader>\n<tickrtheader>Instrument,Symbol,Expiry,Strike,OptionType,Skip,TimeStamp,BidPrice,BidQty,AskPrice,AskQty,LTP,Volume,Skip,Open,High,Low,PrevClose,ATP,TTV,Skip</tickrtheader>\n<tickoiheader>Instrument,Symbol,Expiry,Strike,OptionType,OI,Skip,TimeStamp,Skip</tickoiheader>\n<grkheader>IV,BSMPrice,Delta,Theta,Gamma,Rho,PCRValue,PCRVol,PCROI,Intrinsic,Extrinsic,Probability,Moneyness,MaxPain</grkheader>\r\n","UpdateTime":"2025-06-20T07:46:13.5695738+05:30","ValidUntil":"2025-06-20T23:59:59"}
+2025-06-19 19:16:13,754 - NSEDataCollector - INFO - Authentication token obtained successfully (MaxSymbol=70)
+2025-06-19 19:16:15,358 - NSEDataCollector - INFO - Tickers downloaded successfully
+2025-06-19 19:16:15,358 - NSEDataCollector - INFO - Connecting to websocket: ws://116.202.165.216:992/directrt/?loginid=DC-BPRA9112&accesstoken=3e157ded8d904f16a91b6b24d0e60f7c&product=DIRECTRTLITE
+2025-06-19 19:16:15,359 - NSEDataCollector - ERROR - Error connecting to websocket: module 'websocket' has no attribute 'WebSocketApp'
+2025-06-19 19:16:15,359 - NSEDataCollector - ERROR - Failed to connect to websocket
+2025-06-19 19:16:23,291 - PipelineValidator - INFO - Connected to database successfully
+2025-06-19 19:16:23,291 - PipelineValidator - INFO - Starting pipeline validation
+2025-06-19 19:16:23,308 - PipelineValidator - INFO - Database schema validation passed
+2025-06-19 19:16:23,309 - PipelineValidator - ERROR - Error validating retention policies: relation "_timescaledb_config.bgw_policy_drop_chunks" does not exist
+LINE 4:                 JOIN _timescaledb_config.bgw_policy_drop_chu...
+                             ^
+
+2025-06-19 19:16:23,312 - PipelineValidator - INFO - Found 34 instruments in the database
+2025-06-19 19:16:23,319 - PipelineValidator - INFO - Found 42534 1-minute candles and 0 15-second candles
+2025-06-19 19:16:23,327 - PipelineValidator - INFO - Found 42534 technical indicator records
+2025-06-19 19:16:23,329 - PipelineValidator - WARNING - No candle data found, this may be normal in a test environment
+2025-06-19 19:16:23,329 - PipelineValidator - INFO - Data flow validation completed
+2025-06-19 19:16:24,099 - PipelineValidator - INFO - Indicator calculation validation completed
+2025-06-19 19:16:24,103 - PipelineValidator - INFO - Latest 1-minute candle is 1976326.40 minutes old
+2025-06-19 19:16:24,103 - PipelineValidator - WARNING - No 15-second candle data found
+2025-06-19 19:16:24,103 - PipelineValidator - INFO - Latest technical indicator is 1976326.40 minutes old
+2025-06-19 19:16:24,107 - PipelineValidator - INFO - Table candle_data_1min: 0 inserts, 0 updates, 0 deletes
+2025-06-19 19:16:24,107 - PipelineValidator - INFO - Table candle_data_15sec: 0 inserts, 0 updates, 0 deletes
+2025-06-19 19:16:24,108 - PipelineValidator - INFO - Table technical_indicators: 0 inserts, 0 updates, 0 deletes
+2025-06-19 19:16:24,117 - PipelineValidator - INFO - Latest TimescaleDB chunks:
+2025-06-19 19:16:24,117 - PipelineValidator - INFO -   candle_data_1min: _hyper_1_3_chunk (2021-09-15 17:00:00-07:00 to 2021-09-22 17:00:00-07:00)
+2025-06-19 19:16:24,118 - PipelineValidator - INFO -   candle_data_1min: _hyper_1_2_chunk (2021-09-08 17:00:00-07:00 to 2021-09-15 17:00:00-07:00)
+2025-06-19 19:16:24,118 - PipelineValidator - INFO -   candle_data_1min: _hyper_1_1_chunk (2021-09-01 17:00:00-07:00 to 2021-09-08 17:00:00-07:00)
+2025-06-19 19:16:24,119 - PipelineValidator - INFO -   technical_indicators: _hyper_3_6_chunk (2021-09-15 17:00:00-07:00 to 2021-09-22 17:00:00-07:00)
+2025-06-19 19:16:24,119 - PipelineValidator - INFO -   technical_indicators: _hyper_3_5_chunk (2021-09-08 17:00:00-07:00 to 2021-09-15 17:00:00-07:00)
+2025-06-19 19:16:24,119 - PipelineValidator - INFO -   technical_indicators: _hyper_3_4_chunk (2021-09-01 17:00:00-07:00 to 2021-09-08 17:00:00-07:00)
+2025-06-19 19:16:24,119 - PipelineValidator - INFO - Real-"time" performance validation completed
+2025-06-19 19:16:24,121 - PipelineValidator - INFO - Found 0 15-second candles for the first 2 hours of trading
+2025-06-19 19:16:24,121 - PipelineValidator - INFO - The first_two_hours_data view exists
+2025-06-19 19:16:24,124 - PipelineValidator - INFO - Found 0 technical indicators for the first 2 hours of trading
+2025-06-19 19:16:24,125 - PipelineValidator - INFO - Scalping data validation completed
+2025-06-19 19:16:24,125 - PipelineValidator - INFO - Validation report generated successfully
+2025-06-19 19:16:24,127 - PipelineValidator - INFO - Pipeline validation PASSED
+Streamlit GUI is launching... (see your browser at http://localhost:8501)
+2025-06-19 19:16:24,176 - DataPreparation - INFO - Connected to database successfully
+2025-06-19 19:16:24,179 - DataPreparation - INFO - Starting data preparation for ML/LLM applications
+2025-06-19 19:16:24,192 - DataPreparation - INFO - Scalping data preparation completed
+2025-06-19 19:16:26,030 - DataPreparation - INFO - Saved sample scalping data with 42534 rows
+2025-06-19 19:16:26,125 - DataPreparation - INFO - Scalping data preparation completed successfully
+2025-06-19 19:16:26,138 - DataPreparation - INFO - Feature engineering functions created successfully
+2025-06-19 19:16:26,138 - DataPreparation - INFO - Feature engineering functions created successfully
+2025-06-19 19:16:26,143 - DataPreparation - INFO - Flexible scalping signal generator (generate_scalping_signals_flexible) created successfully
+2025-06-19 19:16:26,143 - DataPreparation - INFO - Scalping signal generator created successfully
+2025-06-19 19:16:26,168 - DataPreparation - INFO - Using symbol: NIFTY_16550CE-09SEP2021
+2025-06-19 19:16:26,176 - DataPreparation - INFO - Found 40 indicators and 40 1min candles for NIFTY_16550CE-09SEP2021
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://140.161.89.12:8501
+
+2025-06-19 19:16:28,519 - DataPreparation - INFO - RandomForestClassifier model trained and saved to ml_data/model.pkl
+2025-06-19 19:16:28,527 - DataPreparation - INFO - Forward test accuracy: 100.00%
+2025-06-19 19:16:28,538 - DataPreparation - INFO - ML training data prepared successfully with 17 samples for symbol NIFTY_16550CE-09SEP2021
+2025-06-19 19:16:29,373 - DataPreparation - INFO - ML training data preparation completed successfully
+2025-06-19 19:16:29,373 - DataPreparation - INFO - Preparing LLM data using ALL available historical data (no time filter).
+2025-06-19 19:16:31,937 - DataPreparation - INFO - LLM data prepared successfully with 42058 records
+2025-06-19 19:16:32,003 - DataPreparation - INFO - LLM data preparation completed successfully
+2025-06-19 19:16:32,005 - DataPreparation - INFO - Data preparation completed
+2025-06-19 19:16:44,524 - DataPreparation - INFO - Database connection pool created
+C:\Users\300353635\Desktop\stock-trading-app\app_gui.py:26: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql("SELECT * FROM instruments", conn)
+C:\Users\300353635\Desktop\stock-trading-app\app_gui.py:33: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql(
+Shutting down all components...
+PS C:\Users\300353635\Desktop\stock-trading-app> python app.py  Stopping...
+                                                 python app.py
+2025-06-19 19:17:54,605 - NSEDataCollector - INFO - Database connection pool created
+2025-06-19 19:17:54,801 - IndicatorCalculator - INFO - Database connection pool created
+2025-06-19 19:17:55,247 - PipelineValidator - INFO - Database connection pool created
+2025-06-19 19:17:56,062 - DataPreparation - INFO - Database connection pool created
+2025-06-19 19:17:56,173 - root - INFO - Processing 2 rows from Nifty_Input.csv
+2025-06-19 19:17:57,730 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116550CE.csv (40 rows)
+2025-06-19 19:17:59,100 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116550PE.csv (901 rows)
+2025-06-19 19:18:00,361 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116600CE.csv (245 rows)
+2025-06-19 19:18:01,743 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116600PE.csv (1119 rows)
+2025-06-19 19:18:02,796 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116650CE.csv (85 rows)
+2025-06-19 19:18:04,149 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116650PE.csv (1025 rows)
+2025-06-19 19:18:05,348 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116700CE.csv (389 rows)
+2025-06-19 19:18:06,880 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116700PE.csv (1126 rows)
+2025-06-19 19:18:07,941 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116750CE.csv (167 rows)
+2025-06-19 19:18:09,295 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116750PE.csv (1091 rows)
+2025-06-19 19:18:10,664 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116800CE.csv (605 rows)
+2025-06-19 19:18:12,040 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116800PE.csv (1126 rows)
+2025-06-19 19:18:13,224 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116850CE.csv (259 rows)
+2025-06-19 19:18:14,608 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116850PE.csv (1105 rows)
+2025-06-19 19:18:15,979 - root - INFO - Saved historical_data\batch_20250620_021756\NIFTY09SEP202116900CE.csv (792 rows)
+2025-06-19 19:18:16,929 - root - INFO - No data for NIFTY 09SEP2021 16900 PE
+2025-06-19 19:18:17,874 - root - INFO - No data for NIFTY 09SEP2021 16950 CE
+2025-06-19 19:18:18,825 - root - INFO - No data for NIFTY 09SEP2021 16950 PE
+2025-06-19 19:18:19,777 - root - INFO - No data for NIFTY 09SEP2021 17000 CE
+2025-06-19 19:18:20,723 - root - INFO - No data for NIFTY 09SEP2021 17000 PE
+2025-06-19 19:18:21,666 - root - INFO - No data for NIFTY 09SEP2021 17050 CE
+2025-06-19 19:18:22,612 - root - INFO - No data for NIFTY 09SEP2021 17050 PE
+2025-06-19 19:18:23,565 - root - INFO - No data for NIFTY 09SEP2021 17100 CE
+2025-06-19 19:18:24,485 - root - INFO - No data for NIFTY 09SEP2021 17100 PE
+2025-06-19 19:18:25,435 - root - INFO - No data for NIFTY 09SEP2021 17150 CE
+2025-06-19 19:18:26,386 - root - INFO - No data for NIFTY 09SEP2021 17150 PE
+2025-06-19 19:18:27,307 - root - INFO - No data for NIFTY 09SEP2021 17200 CE
+2025-06-19 19:18:28,236 - root - INFO - No data for NIFTY 09SEP2021 17200 PE
+2025-06-19 19:18:29,173 - root - INFO - No data for NIFTY 09SEP2021 17250 CE
+2025-06-19 19:18:30,095 - root - INFO - No data for NIFTY 09SEP2021 17250 PE
+2025-06-19 19:18:31,042 - root - INFO - No data for NIFTY 09SEP2021 17300 CE
+2025-06-19 19:18:31,982 - root - INFO - No data for NIFTY 09SEP2021 17300 PE
+2025-06-19 19:18:32,914 - root - INFO - No data for NIFTY 09SEP2021 17350 CE
+2025-06-19 19:18:33,851 - root - INFO - No data for NIFTY 09SEP2021 17350 PE
+2025-06-19 19:18:34,801 - root - INFO - No data for NIFTY 09SEP2021 17400 CE
+2025-06-19 19:18:35,736 - root - INFO - No data for NIFTY 09SEP2021 17400 PE
+2025-06-19 19:18:36,669 - root - INFO - No data for NIFTY 09SEP2021 17450 CE
+2025-06-19 19:18:37,610 - root - INFO - No data for NIFTY 09SEP2021 17450 PE
+2025-06-19 19:18:38,551 - root - INFO - No data for NIFTY 09SEP2021 17500 CE
+2025-06-19 19:18:39,489 - root - INFO - No data for NIFTY 09SEP2021 17500 PE
+2025-06-19 19:18:40,418 - root - INFO - No data for NIFTY 09SEP2021 17550 CE
+2025-06-19 19:18:41,343 - root - INFO - No data for NIFTY 09SEP2021 17550 PE
+2025-06-19 19:18:42,292 - root - INFO - No data for NIFTY 09SEP2021 17600 CE
+2025-06-19 19:18:43,236 - root - INFO - No data for NIFTY 09SEP2021 17600 PE
+2025-06-19 19:18:44,155 - root - INFO - No data for NIFTY 09SEP2021 17650 CE
+2025-06-19 19:18:45,113 - root - INFO - No data for NIFTY 09SEP2021 17650 PE
+2025-06-19 19:18:46,029 - root - INFO - No data for NIFTY 09SEP2021 17700 CE
+2025-06-19 19:18:46,961 - root - INFO - No data for NIFTY 09SEP2021 17700 PE
+2025-06-19 19:18:47,908 - root - INFO - No data for NIFTY 09SEP2021 17750 CE
+2025-06-19 19:18:48,845 - root - INFO - No data for NIFTY 09SEP2021 17750 PE
+2025-06-19 19:18:49,780 - root - INFO - No data for NIFTY 09SEP2021 17800 CE
+2025-06-19 19:18:50,720 - root - INFO - No data for NIFTY 09SEP2021 17800 PE
+2025-06-19 19:18:51,659 - root - INFO - No data for NIFTY 09SEP2021 17850 CE
+2025-06-19 19:18:52,602 - root - INFO - No data for NIFTY 09SEP2021 17850 PE
+2025-06-19 19:18:53,549 - root - INFO - No data for NIFTY 09SEP2021 17900 CE
+2025-06-19 19:18:54,469 - root - INFO - No data for NIFTY 09SEP2021 17900 PE
+2025-06-19 19:18:55,407 - root - INFO - No data for NIFTY 16SEP2021 16750 CE
+2025-06-19 19:18:56,331 - root - INFO - No data for NIFTY 16SEP2021 16750 PE
+2025-06-19 19:18:57,281 - root - INFO - No data for NIFTY 16SEP2021 16800 CE
+2025-06-19 19:18:58,206 - root - INFO - No data for NIFTY 16SEP2021 16800 PE
+2025-06-19 19:18:59,127 - root - INFO - No data for NIFTY 16SEP2021 16850 CE
+2025-06-19 19:19:00,060 - root - INFO - No data for NIFTY 16SEP2021 16850 PE
+2025-06-19 19:19:01,016 - root - INFO - No data for NIFTY 16SEP2021 16900 CE
+2025-06-19 19:19:01,958 - root - INFO - No data for NIFTY 16SEP2021 16900 PE
+2025-06-19 19:19:02,886 - root - INFO - No data for NIFTY 16SEP2021 16950 CE
+2025-06-19 19:19:03,829 - root - INFO - No data for NIFTY 16SEP2021 16950 PE
+2025-06-19 19:19:04,775 - root - INFO - No data for NIFTY 16SEP2021 17000 CE
+2025-06-19 19:19:05,717 - root - INFO - No data for NIFTY 16SEP2021 17000 PE
+2025-06-19 19:19:06,668 - root - INFO - No data for NIFTY 16SEP2021 17050 CE
+2025-06-19 19:19:07,615 - root - INFO - No data for NIFTY 16SEP2021 17050 PE
+2025-06-19 19:19:08,549 - root - INFO - No data for NIFTY 16SEP2021 17100 CE
+2025-06-19 19:19:09,507 - root - INFO - No data for NIFTY 16SEP2021 17100 PE
+2025-06-19 19:19:10,451 - root - INFO - No data for NIFTY 16SEP2021 17150 CE
+2025-06-19 19:19:11,380 - root - INFO - No data for NIFTY 16SEP2021 17150 PE
+2025-06-19 19:19:12,318 - root - INFO - No data for NIFTY 16SEP2021 17200 CE
+2025-06-19 19:19:13,267 - root - INFO - No data for NIFTY 16SEP2021 17200 PE
+2025-06-19 19:19:14,212 - root - INFO - No data for NIFTY 16SEP2021 17250 CE
+2025-06-19 19:19:15,168 - root - INFO - No data for NIFTY 16SEP2021 17250 PE
+2025-06-19 19:19:16,100 - root - INFO - No data for NIFTY 16SEP2021 17300 CE
+2025-06-19 19:19:17,039 - root - INFO - No data for NIFTY 16SEP2021 17300 PE
+2025-06-19 19:19:17,983 - root - INFO - No data for NIFTY 16SEP2021 17350 CE
+2025-06-19 19:19:18,922 - root - INFO - No data for NIFTY 16SEP2021 17350 PE
+2025-06-19 19:19:19,868 - root - INFO - No data for NIFTY 16SEP2021 17400 CE
+2025-06-19 19:19:20,818 - root - INFO - No data for NIFTY 16SEP2021 17400 PE
+2025-06-19 19:19:21,753 - root - INFO - No data for NIFTY 16SEP2021 17450 CE
+2025-06-19 19:19:22,697 - root - INFO - No data for NIFTY 16SEP2021 17450 PE
+2025-06-19 19:19:23,655 - root - INFO - No data for NIFTY 16SEP2021 17500 CE
+2025-06-19 19:19:24,582 - root - INFO - No data for NIFTY 16SEP2021 17500 PE
+2025-06-19 19:19:25,517 - root - INFO - No data for NIFTY 16SEP2021 17550 CE
+2025-06-19 19:19:26,462 - root - INFO - No data for NIFTY 16SEP2021 17550 PE
+2025-06-19 19:19:27,413 - root - INFO - No data for NIFTY 16SEP2021 17600 CE
+2025-06-19 19:19:28,350 - root - INFO - No data for NIFTY 16SEP2021 17600 PE
+2025-06-19 19:19:29,289 - root - INFO - No data for NIFTY 16SEP2021 17650 CE
+2025-06-19 19:19:30,217 - root - INFO - No data for NIFTY 16SEP2021 17650 PE
+2025-06-19 19:19:31,159 - root - INFO - No data for NIFTY 16SEP2021 17700 CE
+2025-06-19 19:19:32,082 - root - INFO - No data for NIFTY 16SEP2021 17700 PE
+2025-06-19 19:19:33,033 - root - INFO - No data for NIFTY 16SEP2021 17750 CE
+2025-06-19 19:19:33,972 - root - INFO - No data for NIFTY 16SEP2021 17750 PE
+2025-06-19 19:19:34,919 - root - INFO - No data for NIFTY 16SEP2021 17800 CE
+2025-06-19 19:19:35,843 - root - INFO - No data for NIFTY 16SEP2021 17800 PE
+2025-06-19 19:19:36,792 - root - INFO - No data for NIFTY 16SEP2021 17850 CE
+2025-06-19 19:19:37,739 - root - INFO - No data for NIFTY 16SEP2021 17850 PE
+2025-06-19 19:19:38,687 - root - INFO - No data for NIFTY 16SEP2021 17900 CE
+2025-06-19 19:19:39,623 - root - INFO - No data for NIFTY 16SEP2021 17900 PE
+2025-06-19 19:19:40,558 - root - INFO - No data for NIFTY 16SEP2021 17950 CE
+2025-06-19 19:19:41,493 - root - INFO - No data for NIFTY 16SEP2021 17950 PE
+2025-06-19 19:19:42,443 - root - INFO - No data for NIFTY 16SEP2021 18000 CE
+2025-06-19 19:19:43,378 - root - INFO - No data for NIFTY 16SEP2021 18000 PE
+2025-06-19 19:19:43,379 - root - INFO - Download complete. 15 CSV files generated in historical_data\batch_20250620_021756
+2025-06-19 19:19:43,594 - root - INFO - Combined file written to: historical_data\batch_20250620_021756\combined_master.csv
+2025-06-19 19:19:43,595 - root - INFO - Starting DB import...
+2025-06-19 19:19:47,699 - root - INFO - Imported 15 CSVs, 0 failed.
+2025-06-19 19:19:47,699 - root - INFO - ALL DONE. 15 files imported, 0 failed. Master CSV: historical_data\batch_20250620_021756\combined_master.csv
+2025-06-19 19:19:47,700 - DataPreparation - INFO - Connected to database successfully
+2025-06-19 19:19:47,711 - DataPreparation - INFO - Flexible scalping signal generator (generate_scalping_signals_flexible) created successfully
+2025-06-19 19:19:47,712 - NSEDataCollector - INFO - Connected to database successfully
+Waiting for indicator calculator to initialize...
+2025-06-19 19:19:47,713 - IndicatorCalculator - INFO - Connected to database successfully
+2025-06-19 19:19:47,719 - NSEDataCollector - INFO - Loaded 34 instruments from database
+2025-06-19 19:19:47,733 - IndicatorCalculator - INFO - Loaded 40 1-minute candles for instrument 1
+2025-06-19 19:19:47,737 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 2
+2025-06-19 19:19:47,742 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 3
+2025-06-19 19:19:47,749 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 4
+2025-06-19 19:19:47,754 - IndicatorCalculator - INFO - Loaded 85 1-minute candles for instrument 5
+2025-06-19 19:19:47,758 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 6
+2025-06-19 19:19:47,762 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 7
+2025-06-19 19:19:47,769 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 8
+2025-06-19 19:19:47,774 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 9
+2025-06-19 19:19:47,780 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 10
+2025-06-19 19:19:47,784 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 11
+2025-06-19 19:19:47,793 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 12
+2025-06-19 19:19:47,797 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 13
+2025-06-19 19:19:47,806 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 14
+2025-06-19 19:19:47,810 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 15
+2025-06-19 19:19:47,816 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 16
+2025-06-19 19:19:47,821 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 17
+2025-06-19 19:19:47,824 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 18
+2025-06-19 19:19:47,830 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 19
+2025-06-19 19:19:47,834 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 20
+2025-06-19 19:19:47,840 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 21
+2025-06-19 19:19:47,844 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 22
+2025-06-19 19:19:47,849 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 23
+2025-06-19 19:19:47,852 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 24
+2025-06-19 19:19:47,857 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 25
+2025-06-19 19:19:47,860 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 26
+2025-06-19 19:19:47,864 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 27
+2025-06-19 19:19:47,868 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 28
+2025-06-19 19:19:47,871 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 29
+2025-06-19 19:19:47,874 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 30
+2025-06-19 19:19:47,877 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 31
+2025-06-19 19:19:47,882 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 32
+2025-06-19 19:19:47,888 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 33
+2025-06-19 19:19:47,892 - IndicatorCalculator - INFO - Loaded 100 1-minute candles for instrument 34
+2025-06-19 19:19:47,893 - IndicatorCalculator - INFO - Historical data loaded successfully
+2025-06-19 19:19:47,893 - IndicatorCalculator - INFO - Indicator Calculator started successfully
+2025-06-19 19:19:47,894 - IndicatorCalculator - INFO - Starting periodic indicator recalculation
+2025-06-19 19:19:57,714 - PipelineValidator - INFO - Connected to database successfully
+2025-06-19 19:19:57,715 - PipelineValidator - INFO - Starting pipeline validation
+2025-06-19 19:19:57,738 - PipelineValidator - INFO - Database schema validation passed
+2025-06-19 19:19:57,739 - PipelineValidator - ERROR - Error validating retention policies: relation "_timescaledb_config.bgw_policy_drop_chunks" does not exist
+LINE 4:                 JOIN _timescaledb_config.bgw_policy_drop_chu...
+                             ^
+
+2025-06-19 19:19:57,742 - PipelineValidator - INFO - Found 34 instruments in the database
+2025-06-19 19:19:57,752 - PipelineValidator - INFO - Found 42534 1-minute candles and 0 15-second candles
+2025-06-19 19:19:57,762 - PipelineValidator - INFO - Found 42534 technical indicator records
+2025-06-19 19:19:57,763 - PipelineValidator - WARNING - No candle data found, this may be normal in a test environment
+2025-06-19 19:19:57,763 - PipelineValidator - INFO - Data flow validation completed
+2025-06-19 19:19:57,895 - NSEDataCollector - ERROR - Error getting auth token: HTTPConnectionPool(host='s3.vbiz.in', port=80): Read timed out. (read timeout=10)
+2025-06-19 19:19:57,895 - NSEDataCollector - ERROR - Failed to get authentication token
+2025-06-19 19:19:58,483 - PipelineValidator - INFO - Indicator calculation validation completed
+2025-06-19 19:19:58,487 - PipelineValidator - INFO - Latest 1-minute candle is 1976329.97 minutes old
+2025-06-19 19:19:58,488 - PipelineValidator - WARNING - No 15-second candle data found
+2025-06-19 19:19:58,488 - PipelineValidator - INFO - Latest technical indicator is 1976329.97 minutes old
+2025-06-19 19:19:58,492 - PipelineValidator - INFO - Table candle_data_1min: 0 inserts, 0 updates, 0 deletes
+2025-06-19 19:19:58,492 - PipelineValidator - INFO - Table candle_data_15sec: 0 inserts, 0 updates, 0 deletes
+2025-06-19 19:19:58,492 - PipelineValidator - INFO - Table technical_indicators: 0 inserts, 0 updates, 0 deletes
+2025-06-19 19:19:58,502 - PipelineValidator - INFO - Latest TimescaleDB chunks:
+2025-06-19 19:19:58,502 - PipelineValidator - INFO -   candle_data_1min: _hyper_1_3_chunk (2021-09-15 17:00:00-07:00 to 2021-09-22 17:00:00-07:00)
+2025-06-19 19:19:58,503 - PipelineValidator - INFO -   candle_data_1min: _hyper_1_2_chunk (2021-09-08 17:00:00-07:00 to 2021-09-15 17:00:00-07:00)
+2025-06-19 19:19:58,503 - PipelineValidator - INFO -   candle_data_1min: _hyper_1_1_chunk (2021-09-01 17:00:00-07:00 to 2021-09-08 17:00:00-07:00)
+2025-06-19 19:19:58,504 - PipelineValidator - INFO -   technical_indicators: _hyper_3_6_chunk (2021-09-15 17:00:00-07:00 to 2021-09-22 17:00:00-07:00)
+2025-06-19 19:19:58,505 - PipelineValidator - INFO -   technical_indicators: _hyper_3_5_chunk (2021-09-08 17:00:00-07:00 to 2021-09-15 17:00:00-07:00)
+2025-06-19 19:19:58,505 - PipelineValidator - INFO -   technical_indicators: _hyper_3_4_chunk (2021-09-01 17:00:00-07:00 to 2021-09-08 17:00:00-07:00)
+2025-06-19 19:19:58,505 - PipelineValidator - INFO - Real-"time" performance validation completed
+2025-06-19 19:19:58,507 - PipelineValidator - INFO - Found 0 15-second candles for the first 2 hours of trading
+2025-06-19 19:19:58,507 - PipelineValidator - INFO - The first_two_hours_data view exists
+2025-06-19 19:19:58,512 - PipelineValidator - INFO - Found 0 technical indicators for the first 2 hours of trading
+2025-06-19 19:19:58,512 - PipelineValidator - INFO - Scalping data validation completed
+2025-06-19 19:19:58,514 - PipelineValidator - INFO - Validation report generated successfully
+2025-06-19 19:19:58,514 - PipelineValidator - INFO - Pipeline validation PASSED
+Streamlit GUI is launching... (see your browser at http://localhost:8501)
+2025-06-19 19:19:58,557 - DataPreparation - INFO - Connected to database successfully
+2025-06-19 19:19:58,559 - DataPreparation - INFO - Starting data preparation for ML/LLM applications
+2025-06-19 19:19:58,576 - DataPreparation - INFO - Scalping data preparation completed
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://140.161.89.12:8501
+
+2025-06-19 19:20:00,186 - DataPreparation - INFO - Saved sample scalping data with 42534 rows
+2025-06-19 19:20:00,266 - DataPreparation - INFO - Scalping data preparation completed successfully
+2025-06-19 19:20:00,272 - DataPreparation - INFO - Feature engineering functions created successfully
+2025-06-19 19:20:00,272 - DataPreparation - INFO - Feature engineering functions created successfully
+2025-06-19 19:20:00,284 - DataPreparation - INFO - Flexible scalping signal generator (generate_scalping_signals_flexible) created successfully
+2025-06-19 19:20:00,284 - DataPreparation - INFO - Scalping signal generator created successfully
+2025-06-19 19:20:00,299 - DataPreparation - INFO - Using symbol: NIFTY_16550CE-09SEP2021
+2025-06-19 19:20:00,304 - DataPreparation - INFO - Found 40 indicators and 40 1min candles for NIFTY_16550CE-09SEP2021
+2025-06-19 19:20:00,855 - DataPreparation - INFO - RandomForestClassifier model trained and saved to ml_data/model.pkl
+2025-06-19 19:20:00,863 - DataPreparation - INFO - Forward test accuracy: 100.00%
+2025-06-19 19:20:00,867 - DataPreparation - INFO - ML training data prepared successfully with 17 samples for symbol NIFTY_16550CE-09SEP2021
+2025-06-19 19:20:01,419 - DataPreparation - INFO - ML training data preparation completed successfully
+2025-06-19 19:20:01,420 - DataPreparation - INFO - Preparing LLM data using ALL available historical data (no time filter).
+2025-06-19 19:20:01,843 - DataPreparation - INFO - Database connection pool created
+C:\Users\300353635\Desktop\stock-trading-app\app_gui.py:26: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql("SELECT * FROM instruments", conn)
+C:\Users\300353635\Desktop\stock-trading-app\app_gui.py:33: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql(
+2025-06-19 19:20:03,955 - DataPreparation - INFO - LLM data prepared successfully with 42058 records
+2025-06-19 19:20:04,003 - DataPreparation - INFO - LLM data preparation completed successfully
+2025-06-19 19:20:04,004 - DataPreparation - INFO - Data preparation completed
+C:\Users\300353635\Desktop\stock-trading-app\app_gui.py:33: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql(
+C:\Users\300353635\Desktop\stock-trading-app\app_gui.py:33: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql(
+C:\Users\300353635\Desktop\stock-trading-app\app_gui.py:33: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql(
+C:\Users\300353635\Desktop\stock-trading-app\app_gui.py:33: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql(
+C:\Users\300353635\Desktop\stock-trading-app\app_gui.py:33: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql(
+2025-06-19 19:20:41,563 - DataPreparation - INFO - Connected to database successfully
+2025-06-19 19:20:41,572 - DataPreparation - INFO - Preparing forward test data for symbol: NIFTY_16550CE-09SEP2021
+2025-06-19 19:20:41,606 - DataPreparation - INFO - Forward test dataset saved to ml_data/forward_test_dataset.csv with 17 samples
+C:\Users\300353635\Desktop\stock-trading-app\app_gui.py:33: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql(
+2025-06-19 19:20:43,529 - DataPreparation - INFO - Connected to database successfully
+2025-06-19 19:20:43,720 - DataPreparation - INFO - Forward test completed with accuracy: 100.00%
+2025-06-19 19:20:43,720 - DataPreparation - INFO - Results saved to ml_data/forward_test_results.csv
+2025-06-19 19:20:43,721 - DataPreparation - INFO - Metrics saved to ml_data/forward_test_metrics.json
+2025-06-19 19:22:30,123 - IndicatorCalculator - INFO - Periodic indicator recalculation completed
+2025-06-19 19:22:30,124 - IndicatorCalculator - INFO - Indicator Calculator stopped
